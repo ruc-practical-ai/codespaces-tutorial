@@ -42,6 +42,12 @@ All assignments in this course will come with the proper *dotfiles* (i.e., hidde
 
 As is the theme with this course, if the tests pass and the work was your own, you will get full credit for any assignment regardless of the tools you prefer to use to complete it.
 
+## Codespaces for Machine Learning
+
+GitHub has a great tutorial on [setting up codespaces for machine learning](https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning).
+
+You can optionally go through this tutorial on your own, or wait until we go through it together in class.
+
 ## Advanced and Optional: Configuring Your Own Codespace
 
 If you want to try [creating or configuring your own codespace](https://docs.github.com/en/codespaces/developing-in-a-codespace/creating-a-codespace-for-a-repository), you are encouraged to do so. This is not required in this course, but you may find it helpful in other work you do, academically and professionally. You will also see why it helps to understand how and where these tools are installed inside a container, codespace (built on containers), or your local machine, when building more complex systems.
