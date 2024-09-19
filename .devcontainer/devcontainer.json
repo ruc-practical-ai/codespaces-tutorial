@@ -1,0 +1,12 @@
+{
+    "name": "Codespaces Tutorial",
+    "image": "alpine:latest",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    },
+    "postCreateCommand": "apk add --no-cache python3 git"
+}
