@@ -34,7 +34,7 @@ One of the easiest ways to use local VS Code to connect to a remote codespace is
 
 Once the codespace is open in the browser, click the three bars in the top left corner and select `Open in VS Code Desktop`.
 
-### Advanced: Using Codespaces in Local VS Code with Locally Hosted Containers
+### Advanced and Optional: Using Codespaces in Local VS Code with Locally Hosted Containers
 
 GitHub provides 120 CPU-hours / month free of charge when using codespaces with a container hosted by GitHub.  This is convenient since GitHub handles everything involved with setting up the container in which the codespace environment runs. However, if we spend a lot of time in codespaces or use CPU-intensive processes we may wish to host containers locally ourselves. This is more difficult to setup, and the exact setup steps will be highly system dependent, but it is worth it for those who wish to write a lot of code and have complete control of every layer of their development environment.
 
