@@ -34,6 +34,57 @@ One of the easiest ways to use local VS Code to connect to a remote codespace is
 
 Once the codespace is open in the browser, click the three bars in the top left corner and select `Open in VS Code Desktop`.
 
+### Advanced: Using Codespaces in Local VS Code with Locally Hosted Containers
+
+GitHub provides 120 CPU-hours / month free of charge when using codespaces with a container hosted by GitHub.  This is convenient since GitHub handles everything involved with setting up the container in which the codespace environment runs. However, if we spend a lot of time in codespaces or use CPU-intensive processes we may wish to host containers locally ourselves. This is more difficult to setup, and the exact setup steps will be highly system dependent, but it is worth it for those who wish to write a lot of code and have complete control of every layer of their development environment.
+
+Follow the setup tutorial [here](https://code.visualstudio.com/docs/devcontainers/containers) for full instructions. A summary of these instructions is included below.
+
+#### Prerequisites
+
+To use codespaces on a locally hosted container, you first need a means of hosting a container on your local machine.
+
+Follow the instructions [here](https://www.docker.com/products/docker-desktop/) to install Docker Desktop.
+
+If Docker Desktop is already installed on your machine, be sure to update it by starting Docker Desktop and clicking `Update to Latest` (in the top-left corner) &rarr; `Download Updates` &rarr; `Update and Restart`. If asked to kill applications, ensure you are not currently using anything relying on Docker Desktop and when ready click `Kill Applications`. Wait for the installer to run and finish before proceeding.
+
+#### Prerequisites (Windows-Specific)
+
+For Windows users it is recommended to install Docker Desktop on top of Windows Subsystem Linux (WSL) 2. If WSL 2 is not already installed and set up, follow the instructions [here](https://docs.docker.com/desktop/wsl/).
+
+Once WSL 2 is installed and configured, if you have not already done so, ensure that Docker Desktop is configured to use it.
+
+Right click on the Docker Desktop taskbar icon and select `Settings`. Check `Use the WSL 2 based engine`. In the settings menu, also select `Enable Docker Terminal`. Click `Apply` and `Restart`.
+
+**Tip for Windows**: If you click Docker Desktop and it does not open, try looking in the task bar to see if it is already open. Stop and restart Docker Desktop from the taskbar if necessary.
+
+It may be necessary to reboot after installing Docker Desktop or WSL 2.
+
+
+#### Open a Repository in a Local Container
+
+When you clone a repository with a `.devcontainer` in it and open it in local VS Code, you may be prompted to open the repository in a container. If you are, you can click the button shown to open the repository.
+
+If you are not prompted, use `Ctrl/Cmd` + `Shift` + `P` &rarr; Type `Dev Containers: Reopen in Container` to open the repository in a local container.
+
+If you do not see this command, install (or uninstall and reinstall) the Dev Containers extension by Microsoft. Restart VS Code if necessary.
+
+#### Configure Git for Local Container
+
+When you open a repository in a local container and run a git command (e.g., `git status`) you may get a security warning. Follow the recommendations and add an exception.
+
+```bash
+git config --global --add safe.directory RECOMMENDED_DIRECTORY
+```
+
+#### Remove Unused Containers
+
+Be sure to remove containers when you are done using them. You can do this from VS Code by clicking on the Remote Explorer extension. Click the `x` next to the container you want to stop.
+
+You can also remove containers directly from Docker Desktop by clicking the `Delete` button corresponding to the container you want to delete.
+
+**Warning**: be sure you do not have any uncommitted changes in the container you are deleting, or any unsaved files that have not been committed to git or saved on your local drive. Once you delete the container, any unsaved files or files only saved on the container itself and not saved on your local machine or push to git will be gone forever!
+
 ### Tips
 
 #### Checking Codespace Creation Status
@@ -45,6 +96,10 @@ Some codespaces in this class might take a long time to build, especially codesp
 The codespace and all its dependencies are are defined in the devcontainer. If we make changes to the devcontainer, we need to reload it for those changes to take effect. Use `Cmd` / `Ctrl` + `Shift` + `P` &rarr; `Codespaces: Rebuild Container` to rebuild the container.
 
 Do not use `gh codespace rebuild` unless you really want to rebuild the entire image (including the base container environment that the codespace is built from, which in most cases in this class we leave unchanged). This takes a long time since it re-downloads the entire image.
+
+#### VS Code Tips and Tricks
+
+VS Code has some [tips and tricks](https://code.visualstudio.com/docs/devcontainers/tips-and-tricks) for working with devcontainers and codespaces that are helpful to read.
 
 ### Limitations
 
