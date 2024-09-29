@@ -127,6 +127,7 @@ You can optionally go through this tutorial on your own, or wait until we go thr
 
 If you want to try [creating or configuring your own codespace](https://docs.github.com/en/codespaces/developing-in-a-codespace/creating-a-codespace-for-a-repository), you are encouraged to do so. This is not required in this course, but you may find it helpful in other work you do, academically and professionally. You will also see why it helps to understand how and where these tools are installed inside a container, codespace (built on containers), or your local machine, when building more complex systems.
 
-You can learn how to do this by defining the right dotfiles in your repository [here](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers).
-
-You can deep dive into codespaces if interested [here](https://docs.github.com/en/codespaces/getting-started/deep-dive).
+You can learn how to do this by learning how to:
+* Define the right dotfiles in your repository [here](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers)
+* Create your own devcontainer [here](https://code.visualstudio.com/docs/devcontainers/create-dev-container)
+* Deep dive into codespaces [here](https://docs.github.com/en/codespaces/getting-started/deep-dive).
